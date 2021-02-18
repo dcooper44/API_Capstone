@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "RecipeSearchView";
+}
+
+@model API_Capstone.Models.ViewModels.RecipeSearchViewModel
+
+    <ul>
+        @foreach (var recipe in Model.Recipes)
+        {
+            <li>@recipe.title</li>                
+            
+        }
+
+    </ul>
