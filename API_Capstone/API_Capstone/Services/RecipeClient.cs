@@ -1,4 +1,5 @@
 ﻿using API_Capstone.Models.ApiModels;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,12 +18,39 @@ namespace API_Capstone.Services
             _client = client;
         }
 
-        public async Task<RecipesResponseModel> GetAllRecipes()
+        public async Task<RecipesResponseModel> GetAllRecipes(int pageNumber)
         {
-            return await GetAsync<RecipesResponseModel>("");
+            return await GetAsync<RecipesResponseModel>(pageNumber);
         }
 
-        private async Task<T> GetAsync<T>(string endPoint)
+        //private async Task<T> GetAsync<T>(string endPoint)
+        //{
+        //    // Post    -  Insert    -  Create
+        //    // Get     -  Select    -  Read
+        //    // Put     -  Update    -  Update
+        //    // Delete  -  Delete    -  Delete
+
+
+        //    var response = await _client.GetAsync(endPoint);
+
+        //    if (response.IsSuccessStatusCode)
+        //    {
+
+        //        var content = await response.Content.ReadAsStreamAsync();
+
+
+
+        //        var model = await JsonSerializer.DeserializeAsync<T>(content);
+
+        //        return model;
+        //    }
+        //    else
+        //    {
+        //        throw new HttpRequestException("The API returned bad response");
+        //    }
+        //}
+
+        private async Task<T> GetAsync<T>(int pageNumber)
         {
             // Post    -  Insert    -  Create
             // Get     -  Select    -  Read
@@ -30,13 +58,14 @@ namespace API_Capstone.Services
             // Delete  -  Delete    -  Delete
 
 
-            var response = await _client.GetAsync(endPoint);
+            var response = await _client.GetAsync($"?p={pageNumber}");
 
             if (response.IsSuccessStatusCode)
             {
+
                 var content = await response.Content.ReadAsStreamAsync();
 
-                
+
 
                 var model = await JsonSerializer.DeserializeAsync<T>(content);
 

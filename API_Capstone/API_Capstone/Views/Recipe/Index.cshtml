@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "RecipeSearchView";
+}
+
+@model API_Capstone.Models.ViewModels.RecipeSearchViewModel
+
+<ul>
+    @foreach (var recipe in Model.Recipes)
+    {
+        <li>@recipe.title</li>
+
+
+
+    }
+
+</ul>
+<form asp-controller="Recipe" asp-action="Index" asp-route-pagenumber="@Model.nextPageNumber" method="post">
+
+
+    <button>Next Page of Results</button>
+
+</form>
+@if (Model.currentPageNumber > 1)
+{
+    <form asp-controller="Recipe" asp-action="Index" asp-route-pagenumber="@Model.previousPageNumber" method="post">
+
+
+        <button>Last Page of Results</button>
+
+    </form>
+}
+

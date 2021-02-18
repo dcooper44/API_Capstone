@@ -10,6 +10,11 @@ namespace API_Capstone.Models.ViewModels
     {
         public List<Result> Recipes  { get; set; }
 
+        public int currentPageNumber { get; set; }
+
+        public int nextPageNumber { get; set; }
+        public int previousPageNumber { get; set; }
+
     }
 
   

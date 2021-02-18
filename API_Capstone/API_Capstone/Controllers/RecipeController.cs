@@ -22,19 +22,25 @@ namespace API_Capstone.Controllers
             _userManager = userManager;
             _RecipeClient = RecipeClient;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber)
         {
             var model = new RecipeSearchViewModel();
 
-            var response = await _RecipeClient.GetAllRecipes();
-          
+            model.Recipes = new List<Result>();
 
-            var listRecipes = new List<Result>();
+            var response = await _RecipeClient.GetAllRecipes(pageNumber);         
+
+            
 
             foreach (var recipe in response.results)
             {
                 model.Recipes.Add(recipe);
             }
+
+            model.currentPageNumber = pageNumber;
+            model.nextPageNumber = pageNumber + 1;
+            model.previousPageNumber = pageNumber - 1;
+
             return View(model);
         }
     }

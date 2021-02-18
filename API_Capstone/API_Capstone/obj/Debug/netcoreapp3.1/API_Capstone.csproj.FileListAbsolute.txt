@@ -185,7 +185,6 @@ C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Caps
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Recipe\RecipeSearchView.cshtml.g.cs
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -201,3 +200,4 @@ C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Caps
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\API_Capstone.dll
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\API_Capstone.pdb
 C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\API_Capstone.genruntimeconfig.cache
+C:\Users\dylan\OneDrive\Documents\GrandCircus\API Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Recipe\Index.cshtml.g.cs
