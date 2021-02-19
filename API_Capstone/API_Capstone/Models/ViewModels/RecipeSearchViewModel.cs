@@ -15,6 +15,7 @@ namespace API_Capstone.Models.ViewModels
         public int nextPageNumber { get; set; }
         public int previousPageNumber { get; set; }
 
+        public int itemNumber { get; set; }
     }
 
   

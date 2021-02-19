@@ -41,6 +41,7 @@ namespace API_Capstone
             services.AddHttpClient<RecipeClient>(httpClient =>
             {
                 httpClient.BaseAddress = new Uri("http://www.recipepuppy.com/api/");
+
             });
 
 

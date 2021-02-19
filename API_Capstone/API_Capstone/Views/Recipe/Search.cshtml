@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model API_Capstone.Models.ViewModels.RecipeSearchViewModel
+<form asp-controller="Recipe" asp-action="Search">
+    <p>
+        <select name="searchType">
+            <option value="AllRecipes">All recipes</option>
+        </select>
+        Search <input type="text" name="searchInfo" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+
+
+
+
+<ul>
+    <li>@Model.itemNumber</li>
+    @foreach (var recipe in Model.Recipes)
+    {
+        <li> <a href="@recipe.href">@recipe.title </a></li>
+        <li> <img src="http://img.recipepuppy.com/123889.jpg" width="200" height="200" /></li>
+        
+    }
+
+</ul>
