@@ -8844,19 +8844,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dylan\\.nuget\\packages\\": {}
+    "C:\\Users\\Jason\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dylan\\OneDrive\\Documents\\GrandCircus\\API Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj",
+      "projectUniqueName": "C:\\Users\\Jason\\Desktop\\code\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj",
       "projectName": "API_Capstone",
-      "projectPath": "C:\\Users\\dylan\\OneDrive\\Documents\\GrandCircus\\API Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj",
-      "packagesPath": "C:\\Users\\dylan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dylan\\OneDrive\\Documents\\GrandCircus\\API Capstone\\API_Capstone\\API_Capstone\\obj\\",
+      "projectPath": "C:\\Users\\Jason\\Desktop\\code\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj",
+      "packagesPath": "C:\\Users\\Jason\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jason\\Desktop\\code\\API_Capstone\\API_Capstone\\API_Capstone\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dylan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jason\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8868,6 +8868,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -8879,6 +8880,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
@@ -8935,7 +8937,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

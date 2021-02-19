@@ -43,5 +43,41 @@ namespace API_Capstone.Controllers
 
             return View(model);
         }
+        public async Task<IActionResult> Search(string searchInfo, string searchType)
+        {
+            var pageNumber = 1;
+            var itemNumber = 0;
+            
+            var model = new RecipeSearchViewModel();
+
+            model.Recipes = new List<Result>();
+
+            if (!String.IsNullOrEmpty(searchInfo))
+            {
+                //if(searchType == "AllRecipes")
+                //{
+                    do
+                    {
+                        var response = await _RecipeClient.GetAllRecipes(pageNumber);
+                        foreach (var recipe in response.results)
+                        {
+                            
+                            if (recipe.title.Contains(searchInfo, StringComparison.OrdinalIgnoreCase)) 
+                            {
+                            itemNumber += 1;
+                                model.Recipes.Add(recipe);
+                            }
+                        }
+                    
+                        pageNumber= pageNumber + 1;
+                        
+                    }
+                    while (pageNumber < 100);                   
+                //}
+
+                
+            }model.itemNumber = itemNumber;
+            return View( model);
+        }
     }
 }
