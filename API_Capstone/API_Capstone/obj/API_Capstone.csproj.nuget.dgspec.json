@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jason\\Desktop\\code\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj": {}
+    "C:\\Users\\there\\Downloads\\Grand Circus\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jason\\Desktop\\code\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj": {
+    "C:\\Users\\there\\Downloads\\Grand Circus\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jason\\Desktop\\code\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj",
+        "projectUniqueName": "C:\\Users\\there\\Downloads\\Grand Circus\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj",
         "projectName": "API_Capstone",
-        "projectPath": "C:\\Users\\Jason\\Desktop\\code\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj",
-        "packagesPath": "C:\\Users\\Jason\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jason\\Desktop\\code\\API_Capstone\\API_Capstone\\API_Capstone\\obj\\",
+        "projectPath": "C:\\Users\\there\\Downloads\\Grand Circus\\API_Capstone\\API_Capstone\\API_Capstone\\API_Capstone.csproj",
+        "packagesPath": "C:\\Users\\there\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\there\\Downloads\\Grand Circus\\API_Capstone\\API_Capstone\\API_Capstone\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jason\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\there\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
