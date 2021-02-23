@@ -6,6 +6,7 @@ using API_Capstone.Models.ApiModels;
 using API_Capstone.Models.DALModels;
 using API_Capstone.Models.ViewModels;
 using API_Capstone.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,9 +30,9 @@ namespace API_Capstone.Controllers
 
             model.Recipes = new List<Result>();
 
-            var response = await _RecipeClient.GetAllRecipes(pageNumber);         
+            var response = await _RecipeClient.GetAllRecipes(pageNumber);
 
-            
+
 
             foreach (var recipe in response.results)
             {
@@ -47,100 +48,115 @@ namespace API_Capstone.Controllers
         public async Task<IActionResult> Search(string searchInfo, string searchType)
         {
             var pageNumber = 1;
-            var itemNumber = 0;
-            
+
             var model = new RecipeSearchViewModel();
 
             model.Recipes = new List<Result>();
 
             if (!String.IsNullOrEmpty(searchInfo))
             {
-                //if(searchType == "AllRecipes")
-                //{
+                if (searchType == "AllRecipes")
+                {
                     do
                     {
                         var response = await _RecipeClient.GetAllRecipes(pageNumber);
                         foreach (var recipe in response.results)
                         {
-                            
-                            if (recipe.title.Contains(searchInfo, StringComparison.OrdinalIgnoreCase)) 
+
+                            if (recipe.title.Contains(searchInfo, StringComparison.OrdinalIgnoreCase))
                             {
-                            itemNumber += 1;
+                                
                                 model.Recipes.Add(recipe);
                             }
                         }
-                    
-                        pageNumber= pageNumber + 1;
-                        
-                    }
-                    while (pageNumber < 100);                   
-                //}
 
-                
-            }model.itemNumber = itemNumber;
-            return View( model);
+                        pageNumber = pageNumber + 1;
+
+                    }
+                    while (pageNumber < 100);
+                }
+
+
+            }
+            return View(model);
         }
-        public IActionResult AddToFavorites(string recipeTitle)
+        public IActionResult AddToFavorites(string Title, string Href, string Ingredients, string Thumbnail)
         {
             var dbModel = new RecipeFavoritesDAL();
 
-            dbModel.Title = recipeTitle;
+            dbModel.Title = Title;
+            dbModel.Href = Href;
+            dbModel.Ingredients = Ingredients;
+            dbModel.Thumbnail = Thumbnail;
+
 
             dbModel.UserId = _userManager.GetUserId(User);
-
-            _recipesDbContext.FavoriteRecipes.Add(dbModel);
+        _recipesDbContext.FavoriteRecipes.Add(dbModel);
             _recipesDbContext.SaveChanges();
 
             return View();
         }
-        public async Task<IActionResult> ViewFavorties()
-        {
-            foreach (var recipe in _recipesDbContext.FavoriteRecipes)
-            {
-                Search(recipe.Title, "AllRecipes", _userManager.GetUserId(User));
 
-                
-            }
-            return View();
+        [Authorize]
+        public IActionResult ViewFavorites()
+        {
+            var recipes = _recipesDbContext.FavoriteRecipes.Where(recipe=> recipe.UserId == _userManager.GetUserId(User))
+                .Select(recipeFavoritesDAL => new RecipeVM() 
+                { Title = recipeFavoritesDAL.Title , Href = recipeFavoritesDAL.Href, Ingredients = recipeFavoritesDAL.Ingredients, Thumbnail= recipeFavoritesDAL.Thumbnail })
+                .ToList();
+            var viewModel = new AddRecipeResultViewModel();
+            viewModel.recipe = recipes;
+            return View(viewModel);
         }   
+    
+        //    }    //public async Task<IActionResult> ViewFavorties()
+        //{
+        //    var model = new RecipeSearchViewModel();
+        //    model.Recipes = new List<Result>();
+        //    var tempRecipe = new Result();
+        //    var listOfRecipes = model.Recipes;
+        //    foreach (var recipe in _recipesDbContext.FavoriteRecipes)
+        //    {
+        //       await Search(recipe.Title, "AllRecipes", _userManager.GetUserId(User));
+                
 
-        public async Task<IActionResult> Search(string recipeTitle, string searchType, string userId)
-        {
-            var pageNumber = 1;
-            var itemNumber = 0;
+        //    }
+        //    return View();
+        //}
 
-            var model = new RecipeSearchViewModel();
-
-            model.Recipes = new List<Result>();
-
-            if (!String.IsNullOrEmpty(recipeTitle))
-            {
-                //if(searchType == "AllRecipes")
-                //{
-                do
-                {
-                    var response = await _RecipeClient.GetAllRecipes(pageNumber);
-                    foreach (var recipe in response.results)
-                    {
-
-                        if (recipe.title.Contains(recipeTitle, StringComparison.OrdinalIgnoreCase))
-                        {
-                            itemNumber += 1;
-                            model.Recipes.Add(recipe);
-                        }
-                    }
-
-                    pageNumber = pageNumber + 1;
-
-                }
-                while (pageNumber < 100);
-                //}
+        //public async Task<IActionResult> Search(string recipeTitle, string searchType, string userId)
+        //{
+        //    var pageNumber = 1;
 
 
-            }
-            model.itemNumber = itemNumber;
-            return 
-                //TODO: return single recipe, send to view favorite, save to list there
-        }
+        //    var model = new RecipeSearchViewModel();
+
+        //    model.Recipes = new List<Result>();
+
+        //    if (!String.IsNullOrEmpty(recipeTitle))
+        //    {
+        //        do
+        //        {
+        //            var response = await _RecipeClient.GetAllRecipes(pageNumber);
+        //            foreach (var recipe in response.results)
+        //            {
+
+        //                if (recipe.title.Contains(recipeTitle, StringComparison.OrdinalIgnoreCase))
+        //                {
+
+        //                    model.Recipes.Add(recipe);
+        //                }
+        //            }
+
+        //            pageNumber = pageNumber + 1;
+
+        //        }
+        //        while (pageNumber < 1000);
+
+
+
+        //    return (IActionResult)model.Recipes;
+        //TODO: return single recipe, send to view favorite, save to list there
+        //}
     }
 }

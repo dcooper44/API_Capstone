@@ -19,12 +19,12 @@
 
 
 <ul>
-    <li>@Model.itemNumber</li>
+    
     @foreach (var recipe in Model.Recipes)
     {
-        <li> <a href="@recipe.href">@recipe.title </a></li>
-        <li> <img src="http://img.recipepuppy.com/123889.jpg" width="200" height="200" /></li>
-        
+        <li> <a href="@recipe.Href">@recipe.title </a></li>
+        <li> <img src="@recipe.Thumbnail" width="200" height="200" /></li>
+        <li> <button type="submit" asp-controller="Recipe" asp-action="AddToFavorites" asp-route-Title="@recipe.title" asp-route-Ingredients="@recipe.Ingredients"asp-route-Href="@recipe.Href"asp-route-Thumbnail="@recipe.Thumbnail">Add to Favorites</button>  </li>        
     }
 
 </ul>

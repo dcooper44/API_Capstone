@@ -405,3 +405,4 @@ C:\Users\Jason\Desktop\code\API_Capstone\API_Capstone\API_Capstone\obj\Debug\net
 C:\Users\Jason\Desktop\code\API_Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\API_Capstone.pdb
 C:\Users\Jason\Desktop\code\API_Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\API_Capstone.genruntimeconfig.cache
 C:\Users\Jason\Desktop\code\API_Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Recipe\Search.cshtml.g.cs
+C:\Users\Jason\Desktop\code\API_Capstone\API_Capstone\API_Capstone\obj\Debug\netcoreapp3.1\Razor\Views\Recipe\ViewFavorites.cshtml.g.cs
