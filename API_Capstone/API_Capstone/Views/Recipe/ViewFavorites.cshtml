@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model API_Capstone.Models.ViewModels.AddRecipeResultViewModel
+
+
+<ul>
+    
+    @foreach (var recipe in Model.recipe)
+    {
+        <li> <a href="@recipe.Href">@recipe.Title </a></li>
+        <li> <img src="@recipe.Thumbnail" width="200" height="200" /></li>
+       
+
+    }
+
+</ul>
